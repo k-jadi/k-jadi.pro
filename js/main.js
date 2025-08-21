@@ -11,8 +11,8 @@ const swiperUsedTech = new Swiper(".swiper-used-tech", {
   // Rendre le passage plus "doux" (smooth)
   speed: 1500, // vitesse de transition en millisecondes
   breakpoints: {
-    640: {
-      slidesPerView: 1,
+    340: {
+      slidesPerView: 2,
       spaceBetween: 20,
     },
     768: {
