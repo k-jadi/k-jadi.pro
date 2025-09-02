@@ -1,57 +1,30 @@
-// Initialize Swiper for Used technologies slider
-const swiperUsedTech = new Swiper(".swiper-used-tech", {
-  loop: true,
-  spaceBetween: 10,
-  pagination: false,
-  navigation: false,
-  autoplay: {
-    delay: 0, // délai en millisecondes entre les diapositives
-    disableOnInteraction: false, // le slider ne s'arrête pas si l'utilisateur interagit avec
-  },
-  // Rendre le passage plus "doux" (smooth)
-  speed: 1500, // vitesse de transition en millisecondes
-  breakpoints: {
-    340: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 20,
-    },
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 20,
-    },
-  },
-});
+// AOS Install
+AOS.init();
 
-// Initialize Swiper for CLient testimonials Slider
-const swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 10,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 1.5,
-      spaceBetween: 20,
-    },
-    1024: {
-      slidesPerView: 1.5,
-      spaceBetween: 20,
-    },
-  },
+// Menu auto active links
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("ul li a");
+  function setActiveLink() {
+    let currentSection = "";
+
+    section.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      if (window.scrollY >= sectionTop - sectionHeight / 3) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${currentSection}`) {
+        link.classList.add("active");
+      }
+    });
+  }
+  window.addEventListener("scroll", setActiveLink);
 });
 
 // Word Transition Effect
@@ -92,6 +65,73 @@ document.addEventListener("DOMContentLoaded", () => {
   typeRole();
 });
 
+// Initialize Swiper for Used technologies slider
+const swiperUsedTech = new Swiper(".swiper-used-tech", {
+  loop: true,
+  spaceBetween: 10,
+  pagination: false,
+  navigation: false,
+  autoplay: {
+    delay: 0, // délai en millisecondes entre les diapositives
+    disableOnInteraction: false, // le slider ne s'arrête pas si l'utilisateur interagit avec
+  },
+  // Rendre le passage plus "doux" (smooth)
+  speed: 1500, // vitesse de transition en millisecondes
+  breakpoints: {
+    340: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+  },
+});
+
+// Open / Close the contact layer on full screen
+const letsGetStarted = document.getElementById("letsGetStarted");
+const contactLayer = document.querySelector(".contactLayer");
+const closingCross = document.querySelector(".closingCross");
+letsGetStarted.addEventListener("click", () => {
+  contactLayer.style.transform = "translateY(0)";
+});
+closingCross.addEventListener("click", () => {
+  contactLayer.style.transform = "translateY(-100vh)";
+});
+
+// Initialize Swiper for CLient testimonials Slider
+const swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+    },
+  },
+});
+
 // Project Filter
 document.addEventListener("DOMContentLoaded", () => {
   const filterButtons = document.querySelectorAll(".project-list li");
@@ -117,32 +157,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-// Menu auto active links
-document.addEventListener("DOMContentLoaded", () => {
-  const section = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("ul li a");
-  function setActiveLink() {
-    let currentSection = "";
-
-    section.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-
-      if (window.scrollY >= sectionTop - sectionHeight / 3) {
-        currentSection = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${currentSection}`) {
-        link.classList.add("active");
-      }
-    });
-  }
-  window.addEventListener("scroll", setActiveLink);
-});
-
-// AOS Install
-AOS.init();

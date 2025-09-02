@@ -60,6 +60,29 @@ ul {
   align-items: flex-start;
 }
 
+/* Contact Layer full screen **********/
+.contactLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0c0c0c;
+  z-index: 100;
+  transform: translateY(-100vh);
+  opacity: 0.9;
+  transition: all 0.3s ease-in;
+}
+
+.closingCross {
+  position: absolute;
+  top: 50px;
+  right: 120px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--main-color);
+  cursor: pointer;
+}
 /* Left Side - Profile **********/
 .menu-profile {
   display: grid;
@@ -172,6 +195,7 @@ header ul li a.active {
 
 .profile-container {
   position: relative;
+  height: 545px;
 }
 
 .user-profile {
@@ -179,6 +203,7 @@ header ul li a.active {
   align-items: center;
   flex-direction: column;
   border-radius: 30px 0px 30px 30px;
+  height: 100%;
 }
 
 .user-profile-container {
@@ -248,7 +273,7 @@ header ul li a.active {
 }
 
 .profile-social-container a:hover,
-.user-profile-btns a:hover {
+.user-profile-btns p:hover {
   color: var(--main-color);
 }
 
@@ -260,17 +285,18 @@ header ul li a.active {
   width: 100%;
 }
 
-.user-profile-btns a {
+.user-profile-btns p {
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--text-color);
   letter-spacing: 0.5px;
   font-weight: 500;
-  transition: all ease0.3s;
+  transition: all ease 0.2s;
+  cursor: pointer;
 }
 
-.user-profile-btns a:first-child {
+.user-profile-btns p:first-child {
   border-right: 1px solid var(--border-color);
 }
 
@@ -299,6 +325,7 @@ header ul li a.active {
 #about-section {
   border-radius: 0px 30px 0px 0px;
   padding: 70px 30px 30px 30px;
+  height: 545px;
 }
 
 #about-section h3 {
@@ -409,9 +436,15 @@ header ul li a.active {
   margin: 35px 0px 20px 0px;
 }
 
-.service-message a {
+.service-message span {
   color: var(--main-color);
   text-decoration: underline;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.service-message span:hover {
+  scale: 1.1;
 }
 
 /*  Service */

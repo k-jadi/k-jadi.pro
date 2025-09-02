@@ -75,6 +75,10 @@ function getClientIp()
     <?php // if ($clientCountryCode != 'MA') :
     ?>
     <div class="main-container">
+        <!-- Contact Layer full screen -->
+        <div class="contactLayer">
+            <div class="closingCross">X</div>
+        </div>
         <!-- Menu and Profile -->
         <div class="menu-profile">
             <!-- Header -->
@@ -136,15 +140,14 @@ function getClientIp()
                             <!-- Social -->
                             <div class="profile-social-container">
                                 <a href="https://www.linkedin.com/company/k-jadi-pro" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                                <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://x.com/kjadi_pro" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                             </div>
                         </div>
                     </div>
                     <!-- Buttons -->
                     <div class="user-profile-btns">
-                        <a href="#">Highlights &nbsp <i class="fa-regular fa-circle-play"></i></a>
-                        <a href="#">Contact Us &nbsp <i class="fa-solid fa-file-signature"></i></a>
+                        <p id="highlights">Highlights &nbsp <i class="fa-regular fa-circle-play"></i></p>
+                        <p id="contactUs">Contact Us &nbsp <i class="fa-solid fa-file-signature"></i></p>
                     </div>
                 </div>
             </div>
@@ -155,7 +158,7 @@ function getClientIp()
             <!-- About section -->
             <section id="about-section" class="section-container">
                 <h3>We ... <span id="role"></span></h3>
-                <h1>Evolve your business with <span>K-JADI.PRO</span> and build it Byte by Byte ...</h1>
+                <h1>Evolve your business with <span>K-JADI.PRO</span> and build it Byte by Byte...</h1>
                 <!-- Block = comment on used tech + swiper slider -->
                 <div class="usedTechnologies">
                     <!-- Comment On used technologies-->
@@ -183,6 +186,10 @@ function getClientIp()
                             </div>
                             <!-- Box-slide -->
                             <div class="swiper-slide" style="opacity: 1;">
+                                <div class="swiper-slide-content"><img src="./images/next.svg" alt=""></div>
+                            </div>
+                            <!-- Box-slide -->
+                            <div class="swiper-slide" style="opacity: 1;">
                                 <div class="swiper-slide-content"><img src="./images/angular.svg" alt=""></div>
                             </div>
                             <!-- Box-slide -->
@@ -195,7 +202,7 @@ function getClientIp()
                             </div>
                             <!-- Box-slide -->
                             <div class="swiper-slide" style="opacity: 1;">
-                                <div class="swiper-slide-content"><img src="./images/next.svg" alt=""></div>
+                                <div class="swiper-slide-content"><img src="./images/express.svg" alt=""></div>
                             </div>
                             <!-- Box-slide -->
                             <div class="swiper-slide" style="opacity: 1;">
@@ -216,6 +223,14 @@ function getClientIp()
                             <!-- Box-slide -->
                             <div class="swiper-slide" style="opacity: 1;">
                                 <div class="swiper-slide-content"><img src="./images/postgre.svg" alt=""></div>
+                            </div>
+                            <!-- Box-slide -->
+                            <div class="swiper-slide" style="opacity: 1;">
+                                <div class="swiper-slide-content"><img src="./images/mongodb.svg" alt=""></div>
+                            </div>
+                            <!-- Box-slide -->
+                            <div class="swiper-slide" style="opacity: 1;">
+                                <div class="swiper-slide-content"><img src="./images/firebasedb.svg" alt=""></div>
                             </div>
                             <!-- Box-slide -->
                             <div class="swiper-slide" style="opacity: 1;">
@@ -322,8 +337,8 @@ function getClientIp()
 
                 <!-- Message -->
                 <p class="service-message">
-                    Contact me for Any Help And Services
-                    <a href="#">Let's get Started</a>
+                    Contact Us for Any Help And Services ... &nbsp
+                    <span id="letsGetStarted">Let's get Started</span>
                 </p>
             </section>
 
